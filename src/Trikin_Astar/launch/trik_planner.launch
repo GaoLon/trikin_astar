@@ -1,0 +1,22 @@
+<launch>
+
+  <!-- 在rviz中显示-->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find trikin_astar)/config/env.rviz" />  
+
+  <node pkg="trikin_astar" name="Trikin_Astar" type="Trikin_Astar" output="screen" >
+      <param name="max_iter" type="int" value="10000"/>
+      <param name="min_tau_" type="double" value="0.1"/>
+      <param name="max_kappa" type="double" value="2.0"/>
+      <param name="w_time_" type="double" value="10.0"/>
+      <param name="lambda_heu_" type="double" value="5.0"/>
+      <param name="k_rho" type="double" value="0.0"/>
+      <param name="k_dkap" type="double" value="0.5"/>
+      <param name="allocate_num_" type="int" value="100000"/>
+      <param name="tolerance2" type="double" value="0.01"/>
+      <param name="resolution_" type="double" value="0.05"/>
+      <param name="com_area2" type="double" value="7.6e-5"/>
+      <param name="min_ctilt" type="double" value="-1.0"/>
+      <param name="mapFile" type="string" value="/home/xulong/trik_planner/src/Trikin_Astar/src/advance_map.off" />
+  </node>
+
+</launch>
